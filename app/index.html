@@ -1,0 +1,66 @@
+<!doctype html>
+  <head>
+    <meta charset="utf-8">
+    <title>UXM Dashboard</title>
+    <meta name="viewport" content="width=device-width">
+    <!-- build:css styles/vendor.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+    <link data-require="bootstrap-css@2.3.2" data-semver="2.3.2" rel="stylesheet" href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" />
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css({.tmp,app}) styles/main.css -->
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/navbar.css">
+    <link rel="stylesheet" href="styles/gridLayout.css">
+    <!-- endbuild -->
+  </head>
+  <body class="col-md-8"  ng-app="F1FeederApp">
+        <!-- The navigation menu will get the value of the "active" variable as a class.
+         The $event.preventDefault() stops the page from jumping when a link is clicked. -->
+    <div class="navbar row">
+        <nav class="{{active}}" ng-controller='uxmHome'>
+
+            <!-- When a link in the menu is clicked, we set the active variable -->
+
+            <a href="#/about" class="home" ng-click="active='home'">Home</a>
+            <a href="#/employees" class="projects" ng-click="active='projects'">Employees</a>
+            <a href="#/services" class="services" ng-click="active='services'">Services</a>
+            <a href="#/contactUs" class="contact" ng-click="active='contact'">Contact</a>
+        </nav>
+    </div>
+
+<!-- <div class="slide-animate" ng-include="views/list-grid-view.html"></div> -->
+ 
+    <div class="mainContent" >
+        <div >
+            <ng-view></ng-view>
+        </div>
+    </div>
+    <!-- build:js scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/es5-shim/es5-shim.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/json3/lib/json3.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="bower_components/angular-touch/angular-touch.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap.min.js"></script>
+
+     
+    <!-- endbower -->
+    <!-- endbuild -->
+
+        <!-- build:js({.tmp,app}) scripts/scripts.js -->
+        <script data-require="angular-ui-bootstrap@0.3.0" data-semver="0.3.0" src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.3.0.min.js"></script>
+        <script src="scripts/app.js"></script>
+        <script src="scripts/services.js"></script>
+        <!-- <script src="scripts/controllers/driver.js"></script>
+        <script src="scripts/controllers/drivers.js"></script> -->
+        <script src="scripts/controllers/switchLayout.js"></script>
+        <script src="scripts/controllers/doPaginate.js"></script>
+        <!-- endbuild -->
+</body>
+</html>
